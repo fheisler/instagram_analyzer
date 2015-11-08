@@ -2,7 +2,7 @@
 
 Welcome!
 
-**This post details how to convert an IPython Notebook into a Flask web application.** More specifically, we'll take an IPython Notebook, containing all of the data work, strip out the relevant parts to build out the Flask back-end, and then add a nice front-end so that the world can see your work.
+**This post details how to convert an IPython Notebook into a Flask web application.** More specifically, we'll take an IPython Notebook containing all of the data work, strip out the relevant parts to build out the Flask back-end, and then add a nice front-end so that the world can see your work.
 
 ADD IMAGE
 
@@ -16,7 +16,7 @@ Before diving into Flask, take a look at, and interact with, the IPython Noteboo
 - [Clean the data](https://github.com/odubno/instagram_analyzer/blob/master/IPython_Notebook_Files/02_instagram_analyze_Data_Cleaning.ipynb)
 - [Visualize the data via Matplotlib](https://github.com/odubno/instagram_analyzer/blob/master/IPython_Notebook_Files/03_instagram_analyze_Matplotlib.ipynb)
 
-Make sure you understand the code in this Notebooks as they set the basis for the Flask app. Now, we can being the conversion process, from IPython to Flask:
+Make sure you understand the code in these Notebooks as they set the basis for the Flask app. Now we can begin the conversion process from IPython to Flask:
 
 1. *Part One*: Set up the local development environment along with the basic Flask app.
 1. *Part Two*: Add in the back-end logic to access the Instagram API, process the data with Pandas/Numpy, and create the charts with Matplotlib.
@@ -74,15 +74,15 @@ Here we'll be pulling in the code from the IPython Notebook files, iteratively..
 
 ### Instagram Registration
 
-Before any work in Python, you’ll need to first register a new application with Instagram. First, sign up for Instagram (if necessary), and then log in. Once you’re logged in, you can set up an app from the [Developer Portal](https://instagram.com/developer/clients/register/). An arbitrary URL and URI can be used for the sake of this exercise.
+Before any work in Python, you’ll need to first register a new application with Instagram. First, sign up for Instagram (if you haven't already), and then log in. Once you’re logged in, you can set up an app from the [Developer Portal](https://instagram.com/developer/clients/register/). An arbitrary URL and URI can be used for the sake of this exercise.
 
 Once you’ve registered a client, you should have your own Client ID, which will be used to connect to the API. Add this to the *_config.py* file, like so:
 
 ```python
-INSTAGRAM_CLIENT_ID = '0755d115c19d38939d357b33fe8138bc'
+INSTAGRAM_CLIENT_ID = '768fcf1f36c94eb08506bae0a9caffa31'
 ```
 
-Finally, move the config file into "app" directory.
+Finally, move the config file into the "app" directory.
 
 ### Data Extraction and Analysis
 
@@ -131,13 +131,13 @@ def instagram_analyzer(query):
 
 Here we make a call to the Instagram API to pull in the thirty most recent Instagram posts. The posts are then added to a Pandas DataFrame and cleaned to better display the data.
 
-Want to test this script? Add the following code to the bottom-
+Want to test this script? Add the following code to the bottom:
 
 ```python
 print(instagram_analyzer('javascript'))
 ```
 
--and then run the script-
+and then run the script:
 
 ```sh
 $ python app/instagram_analyze.py
@@ -179,7 +179,7 @@ Comments Count  Likes Count
 29               2           20
 ```
 
-Image comparing notebook to the script
+Let's compare the notebook to the script side-by-side:
 
 <a><img src="/instagram_analyzer_app/static/img/script_vs_notebook_1.jpg" alt="Instagram Analyzer"></a>
 
